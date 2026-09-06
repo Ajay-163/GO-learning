@@ -1,0 +1,142 @@
+# DAY 1 — Go Programming Notes
+
+## What is Go?
+
+what is go ?
+Go (Golang) is an open-source, statically typed programming language developed by Google engineers Robert Griesemer, Rob Pike, and Ken Thompson,
+first released in 2009.It is designed to combine the performance and safety of low-level languages like C with the ease of use of high-level languages like Python.
+
+## Why Go is Used in Backend Development?
+
+why GO used in backend development ?
+
+**High Performance and Efficiency:**
+Go is compiled to machine code, resulting in fast execution speeds, low latency, and efficient resource usage, making it ideal for handling high-traffic workloads and large-scale distributed systems.
+
+**Built-in Concurrency:**
+The language features goroutines and channels, which allow it to handle thousands of concurrent operations efficiently without the significant resource
+strain associated with traditional threading models.
+
+**Simplicity and Maintainability:**
+Go’s minimalistic syntax and comprehensive standard library reduce complexity, improving developer productivity and making codebases easier to maintain and
+scale over time.
+
+**Cloud-Native Suitability:**
+Go is heavily used in cloud infrastructure and DevOps tools (such as Kubernetes, Docker, and Terraform), making it a natural fit for modern microservices, APIs, and server-side applications.
+
+## Go Installation for Windows
+
+GO installation for windows:
+-open any browser and search  for go.dev and choose .msi link to download.
+-Run it → Next → Next → Install → Finish.
+-The installer adds Go to your PATH automatically.
+
+## Install the Go Extension in VS Code
+
+**Install the Go Extension in VS Code:**
+* Open VS Code → Extensions panel (Ctrl+Shift+X / Cmd+Shift+X)
+* Search "Go" → install the official extension by Go Team at Google (golang.go)
+* Open any .go file (or a folder with a go.mod) — the extension auto-activates and shows a "Analysis Tools Missing" prompt in the status bar
+* Click it → "Install All" to install gopls, dlv (debugger), golangci-lint, etc.
+
+## Project Root Files
+
+* clone or import go.mod file and go.sum file which are essential in project root.
+* go.mod  consists of dependencies , modules and version of dependencies.
+* go.sum consists of cryptographic hashes of  those go.mod dependencies.
+* .gitignore file consists the files which are not wanted to push into git like .env and .exe files.
+All these files are needed to be imported in project root or project architecture to successfully run a project in GO.
+
+## Commands Used to Start a Program
+
+commands used to start a program
+* go.mod tidy this command is used to add any dependencies if needed and removes unwanted dependencies from the project.
+* "go run ." or "go run filename.go" are used to run a program in terminal
+* go build- compiles Go source code into a standalone executable binary
+
+## Major Terms in a Go Program
+
+-In a go program there are some major terms are there  need to know about them.
+
+**package main:**
+Declares that this file belongs to the main package.  In Go, every file must declare which package it belongs to. The main package is special — it tells
+the compiler: "this is an executable program, not a library." Without it, go build won't produce a runnable binary.
+*All files in the same directory must declare the same package name.
+
+**import "fmt":**
+Brings the fmt package (short for format) into scope.  It's part of Go's standard library and provides formatted I/O — printing, scanning input, string formatting, etc.
+*Without this import, calling fmt.Println would fail.
+
+**func main():**
+The entry point of the program — the function the runtime calls first when the binary starts.
+**Rules:**
+-Must be named exactly main.
+-Must live in the main package.
+-Takes no parameters and returns nothing.
+-There can be only one per program.
+-'{' has to be start after main() in the same line only.
+
+**fmt.Println():**
+-A function from the fmt package that:
+-Prints its arguments to standard output (the console)
+-Inserts spaces between multiple arguments automatically
+-Appends a newline (\n) at the end
+
+## Hello Go Program
+
+```go
+package main					//declaring this file belongs to main package
+import "fmt"					// importing fmt  package for printing
+func main(){					// start of the program
+ fmt.Println("Hello World!")			//print statement
+}						//close of program.
+```
+
+## Program to Print Personal Details
+
+```go
+package main
+import "fmt"
+func main(){
+ String name="max"
+ int age=22
+ String city="Hyd"
+ int phone = " 98765 43210"
+ String course = "B.Tech CSE"
+ String college = "XYZ Institute of Technology"
+ fmt.Println("Name:",name)
+ fmt.Println("Age:",age)
+ fmt.Println("City",city)
+ fmt.Println("PHN No", phone)
+ fmt.Println("Course",course)
+ fmt.Println("College",college)
+}
+```
+
+## Program to Create Simple Employee Information
+
+```go
+package main
+import "fmt"
+type Employee struct {			// struct  is a datatype which stores the different type of variable under single name.
+    ID       int
+    Name     string
+    Dept     string
+    Salary   float64
+    JoinDate string
+}
+func main() {
+    emp := Employee{			// assigned Employee struct to emp variable
+        ID:       101,
+        Name:     "maxwell",
+        Dept:     "software",
+        Salary:   45000,
+        JoinDate: "2025-06-01",
+    }
+    fmt.Printf("ID:       %d\n", emp.ID)
+    fmt.Printf("Name:     %s\n", emp.Name)
+    fmt.Printf("Dept:     %s\n", emp.Dept)
+    fmt.Printf("Salary:   ₹%.2f\n", emp.Salary)
+    fmt.Printf("Join Date:%s\n", emp.JoinDate)
+}
+```
