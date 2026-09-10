@@ -1,7 +1,3 @@
-Operators:
-learn: Arithematic,comparison,logical operators,expression evaluation
-practice: practice even/odd,largest of 2/3 numbers, percentage,salary caluculation,age/eligibility.
-
 Operators are used to perform operations on variables and values.
 Types of operators:
 1.Arithematic operators
