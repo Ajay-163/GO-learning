@@ -6,10 +6,10 @@ func main(){
 	fmt.Print("enter age of person:")
 	fmt.Scanln(&age)
 
-	if age>=18{
-		fmt.Println("eligible for vote")
+	if age>18{
+		fmt.Println("Person is  major")
 	} else{
-		fmt.Println("not eligible for vote")
+		fmt.Println("Person is Minor")
 	}
 
 }
